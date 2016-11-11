@@ -15,11 +15,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
        
-        let circleFrame = CGRect.init(origin: self.view.center, size: CGSize.init(width: 50, height: 50))
-        var circle = CircleView.init(frame: circleFrame)
+        let circleFrame = CGRect.init(origin: CGPoint.init(x: 100, y: 100), size: CGSize.init(width: 50, height: 50))
+        print(circleFrame)
+        var circle = CircleView.init(frame: circleFrame, string: "hhh")
         
         
         self.view.addSubview(circle)
+        circle.circleLayer.setNeedsDisplay()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

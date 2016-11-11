@@ -14,8 +14,9 @@ class CircleView: UIView {
     
     var circleLayer = CircleLayer()
     
-    convenience override init(frame: CGRect) {
+    convenience init(frame: CGRect,string:String) {
         self.init()
+        self.frame = frame
         var layerFrame = self.frame
         layerFrame.origin = CGPoint.init(x: 0, y: 0)
         circleLayer.frame = layerFrame
@@ -29,13 +30,48 @@ class CircleLayer: CALayer {
         case LIFT
         case RIGHT
     }
-    
-    private var outsideRect: CGRect!
+    let outsideRectSize: CGFloat = 50
+
+    private var outsideRect = CGRect.init(x: 0, y: 0, width: 50, height: 50)
     private var lastProgress: CGFloat = 0.5
     private var movePoint: Trend!
-    var progress = Float()
+    var progress: CGFloat = 0.0 {
+        didSet{
+            //外接矩形在左侧，则改变B点；在右边，改变D点
+            if progress <= 0.5 {
+                movePoint = .RIGHT
+                
+            }else{
+                movePoint = .LIFT
+                
+            }
+            
+            self.lastProgress = progress
+            let buff = (progress - 0.5)*(frame.size.width - outsideRectSize)
+            let origin_x = position.x - outsideRectSize/2 + buff
+            let origin_y = position.y - outsideRectSize/2;
+            
+            outsideRect = CGRect.init(x: origin_x, y: origin_y, width: outsideRectSize, height: outsideRectSize)
+            
+            setNeedsDisplay()
+        }
+    }
     var trend:Trend = .LIFT
     
+    override init(layer: Any) {
+        super.init(layer: layer)
+        if let layer = layer as? CircleLayer {
+            progress    = layer.progress
+            outsideRect = layer.outsideRect
+            lastProgress = layer.lastProgress
+        }
+    }
+    override init() {
+        super.init()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func draw(in ctx: CGContext) {
         let offset = outsideRect.size.width / 3.6
