@@ -14,6 +14,7 @@
 		AFEEF2851DD44E1C00EF8455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFEEF2831DD44E1C00EF8455 /* LaunchScreen.storyboard */; };
 		AFEEF2901DD44E1C00EF8455 /* CoreAnimationExperimentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEF28F1DD44E1C00EF8455 /* CoreAnimationExperimentTests.swift */; };
 		AFEEF29B1DD44E1C00EF8455 /* CoreAnimationExperimentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEF29A1DD44E1C00EF8455 /* CoreAnimationExperimentUITests.swift */; };
+		AFEEF2AA1DD4846E00EF8455 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEEF2A91DD4846E00EF8455 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		AFEEF2961DD44E1C00EF8455 /* CoreAnimationExperimentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationExperimentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEEF29A1DD44E1C00EF8455 /* CoreAnimationExperimentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAnimationExperimentUITests.swift; sourceTree = "<group>"; };
 		AFEEF29C1DD44E1C00EF8455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFEEF2A81DD4658F00EF8455 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		AFEEF2A91DD4846E00EF8455 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				AFEEF2811DD44E1C00EF8455 /* Assets.xcassets */,
 				AFEEF2831DD44E1C00EF8455 /* LaunchScreen.storyboard */,
 				AFEEF2861DD44E1C00EF8455 /* Info.plist */,
+				AFEEF2A81DD4658F00EF8455 /* MyPlayground.playground */,
+				AFEEF2A91DD4846E00EF8455 /* CircleView.swift */,
 			);
 			path = CoreAnimationExperiment;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEEF2AA1DD4846E00EF8455 /* CircleView.swift in Sources */,
 				AFEEF27D1DD44E1C00EF8455 /* ViewController.swift in Sources */,
 				AFEEF27B1DD44E1C00EF8455 /* AppDelegate.swift in Sources */,
 			);

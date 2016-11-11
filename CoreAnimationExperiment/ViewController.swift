@@ -13,6 +13,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        let circleFrame = CGRect.init(origin: self.view.center, size: CGSize.init(width: 50, height: 50))
+        var circle = CircleView.init(frame: circleFrame)
+        
+        
+        self.view.addSubview(circle)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
